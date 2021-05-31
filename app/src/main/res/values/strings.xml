@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">NotePad</string>
+    <string name="note_title_input">Título</string>
+    <string name="edt_notedescription">Descrição</string>
+</resources>
