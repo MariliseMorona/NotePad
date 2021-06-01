@@ -22,11 +22,11 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"/>
 
         <EditText
             android:id="@+id/edt_notedescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/edt_notedescription"
+            android:hint="@string/edt_notedescription"/>
 </LinearLayout>

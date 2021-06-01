@@ -54,7 +54,7 @@ class NotePadProvider : ContentProvider() {
         if (mUriMatcher.match(uri) == NOTES) {
             val db: SQLiteDatabase = dbHelper.writableDatabase
             val id = db.insert(TABLE_NOTES, null, values)
-            val insertUrl: Uri! = Uri.withAppendedPath(BASE_URI, id.toString())
+            val insertUrl: Uri = Uri.withAppendedPath(BASE_URI, id.toString())
             db.close()
             context?.contentResolver?.notifyChange(uri, null)
             return insertUrl
@@ -70,7 +70,14 @@ class NotePadProvider : ContentProvider() {
         return when {
             mUriMatcher.match(uri) == NOTES -> {
                 val db: SQLiteDatabase = dbHelper.writableDatabase
-                val cursor = db.query(TABLE_NOTES, projection, selectionArgs, null, null, sortOrder)
+                val cursor =
+                    db.query(
+                        TABLE_NOTES,
+                        projection,
+                        selection,
+                        selectionArgs,
+                        null, null,
+                        sortOrder)
                 cursor.setNotificationUri(context?.contentResolver, uri)
                 cursor
             }
